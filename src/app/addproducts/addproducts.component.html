@@ -1,0 +1,32 @@
+<p>addproducts works!</p>
+<a (click)="showallusers()" class="btn"> Show all users</a>
+    <a (click)="userstoapprove()" class="btn"> Show users to approve</a>
+    <a (click)="showallproducts()" class="btn"> Show all products</a>
+<form #productForm="ngForm" (ngSubmit)=addProduct(productForm) novalidate>
+    <table align="center">
+        <tr>
+            <td><label for="prod_id">Product Id</label></td>
+            <td><input type="text" name="prod_id" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="prod_name">Product Name</label></td>
+            <td><input type="text" name="prod_name" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="price">Product price</label></td>
+            <td><input type="number" name="price" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="description">Product Description</label></td>
+            <td><input type="text" name="description" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="prod_img">Product Image</label></td>
+            <td><input type="file" (change)=onChange($event)  required></td>
+        </tr>
+        <tr>
+            <td><button type="reset" class="btn btn-danger">Reset</button></td>
+            <td><button type="submit" [disabled]="!productForm.valid" class="btn btn-success">Save Product</button></td>
+        </tr>
+    </table>
+</form>

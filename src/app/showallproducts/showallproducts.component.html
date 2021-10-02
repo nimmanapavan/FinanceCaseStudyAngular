@@ -1,0 +1,21 @@
+<p>showallproducts works!</p>
+<a (click)="showallusers()" class="btn"> Show all users</a>
+    <a (click)="userstoapprove()" class="btn"> Show users to approve</a>
+    <a (click)="addproducts()" class="btn"> Add Products</a>
+<table align="center" class="table">
+    <thead>
+        <th>Product image</th>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products;let i=index">
+            <td><img src="/assets/{{p.prod_id}}.png" alt="" height="100px" width="150px"></td>
+            <td>{{p.prod_name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.description}}</td>
+            <td><button (click)='deleteproduct(p.prod_id)' class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,111 @@
+<p>dashboard works! </p> 
+<div class="container">
+  <button (click)="productslist()"> hlo</button>
+  <button routerLink="">Logout</button>
+</div>
+
+<h6  >DASHBOARD</h6>
+
+<div >
+    
+    <div >
+      <div *ngIf="approval else elseBloc">
+        Card Number: {{obj1.card_no}}
+        
+    </div>
+        <ng-template #elseBloc>
+         <div>CARD NUMBER NOT GENERATED</div> 
+           
+      </ng-template>
+      
+      Name: {{obj1.name}}<br>
+      Valid till: {{validitydate}}  <br>
+      CARD TYPE: {{obj1.card_type}}    
+    </div>
+    
+    <div *ngIf="approval else elseBlock"><div  >
+    ACTIVATED  
+    </div>
+</div>
+    <ng-template #elseBlock><div  >
+     NOT ACTIVATED 
+       
+    </div></ng-template>
+    </div>
+
+<br> <br> <br>
+<div >
+    <div >
+      <h2 >
+        <button >
+          TOTAL CREDIT
+        </button>
+      </h2>
+      <div >
+        <div >
+          <strong>Rs. {{tcredit}}</strong>
+        </div>
+      </div>
+    </div>
+    <div >
+      <h2 >
+        <button >
+          CREDIT USED
+        </button>
+      </h2>
+      <div >
+        <div >
+          <strong>Rs. {{totalused}}</strong>
+        </div>
+      </div>
+    </div>
+    <div >
+      <h2 >
+        <button >
+          REMAINING CREDIT
+        </button>
+      </h2>
+      <div >
+        <div >
+        <strong>Rs. {{remainingcredit}}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+<br> <br> 
+
+  <p>
+    <button class="btn btn-primary" type="button" >
+      TRANSACTION HISTORY
+    </button>
+  </p>
+  <div style="min-height: 120px;">
+    <div >
+      <div >
+        <table class="table table-striped">
+            <thead>
+                <td>Product ID</td>
+                <td>Product Name</td>
+                <td>Total Amount</td>
+                <td>Date Of Purchase </td>
+                <td>EMI Period</td>
+                <td>STATUS</td>
+
+                
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of obj,let i = index ">
+                    <td>{{t.prod_id}}</td>
+                    <td>{{product[i].prod_name}}</td>
+                    <td>{{product[i].price}}</td>
+                    <td>{{t.date_of_purchase}}</td>
+                    <td>{{t.emi_period}}</td>
+                    <td>{{t.status}}</td>
+                </tr>
+                
+            </tbody>
+          </table> 
+    </div>
+    </div>
+  </div>

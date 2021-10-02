@@ -1,0 +1,33 @@
+<table class="table table-striped">
+    <thead>
+        <th><h1>ORDER DETAILS</h1></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Order_Id</b></td>
+            <td>{{order.order_id}}</td>
+        </tr>
+        <tr>
+            <td><b>User_Id</b></td>
+            <td>{{order.user_id}}</td>
+        </tr>
+        <tr>
+            <td><b>Product_Id</b></td>
+            <td>{{order.prod_id}}</td>
+        </tr>
+        <tr>
+            <td><b>Product_Name</b></td>
+            <td>{{product.prod_name}}</td>
+        </tr>
+        <tr>
+            <td><b>Price</b></td>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr>
+            <td><b>Order_Date</b></td>
+            <td>{{order.date_of_purchase}}</td>
+        </tr>
+    </tbody>
+        
+</table>
+<button (click)="gohome()">Go home</button>

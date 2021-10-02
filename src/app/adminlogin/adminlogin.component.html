@@ -1,0 +1,17 @@
+<p>adminlogin works!</p>
+
+<form [formGroup]="profileForm" class="form-group row" (ngSubmit)="subform()">
+    <div class="col-6">
+        <label for="fname" class="form-label ">Username</label>
+        <input type="text" class="form-control-md" formControlName="UserName" [(ngModel)]="NAME1">
+        
+    </div>
+    <br>
+  <div>
+        <label for="lname" class="form-label" >Password</label>
+        <input type="password" class="form-control-md" formControlName="Password" [(ngModel)]="NAME2">
+        
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary mt-1 col-4  mx-auto" >Submit</button>
+</form>

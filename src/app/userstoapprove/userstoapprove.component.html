@@ -1,0 +1,30 @@
+<p>userstoapprove works!</p>
+
+<a (click)="showallusers()" class="btn"> Show all users</a>
+<a (click)="addproducts()" class="btn"> Add Products</a>
+<a (click)="showallproducts()" class="btn"> Show all products</a>
+<table align="center" class="table">
+    <thead>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Email ID</th>
+        <th>Phone number</th>
+        <th>Documents</th>
+        <th>Card Number</th>
+        <th>Approve</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of usersarray">
+            <td>{{u.user_id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.dob}}</td>
+            <td>{{u.email_id}}</td>
+            <td>{{u.phone_no}}</td>
+            <td><a class="btn" href="/assets/{{u.user_id}}.pdf" download="/assets/{{u.user_id}}.pdf">View document</a></td>
+            <td><input type="text" [(ngModel)]="u.card_no" placeholder="Card number"></td>
+            <td><button (click)="approveuser(u.user_id,u.card_no)">Approve User</button></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

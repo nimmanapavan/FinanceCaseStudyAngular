@@ -1,0 +1,43 @@
+<table class="table table-dark">
+    <thead>
+        <th>Product</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Product id</td>
+            <td>{{prodobj.prod_id}}</td>
+        </tr>
+        <tr>
+            <td>Product Name</td>
+            <td>{{prodobj.prod_name}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{prodobj.price}}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{prodobj.description}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <tr>
+        <td>EMI Period (in months)</td>
+        <td>
+            <select [(ngModel)]="emiperiod" (change)=getEMI()>
+                <option value="NA">--select--</option>
+                <option *ngFor="let p of period" value="{{p}}">{{p}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>EMI starting at {{emiAmount}} pm</td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn btn-warning" [routerLink]='["/processingfee",prodobj.prod_id]' [disabled]="payButtonStatus" >Pay Now</button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,74 @@
+<p>userregistration works!</p>
+<form #userForm="ngForm" (ngSubmit)=addUser(userForm) novalidate>
+    <table align="center">
+        <tr>
+            <td><label for="user_id">User Id</label></td>
+            <td><input type="text" name="user_id" ngModel required>
+                <div *ngIf="u==1" style="color: red;">user already exists</div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td><input type="text" name="name" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="dob">Date of Birth</label></td>
+            <td><input type="date" name="dob" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="emai_id">Email Id</label></td>
+            <td><input type="email" name="email_id" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="phone_no">Mobile Number</label></td>
+            <td><input type="number" name="phone_no" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="password" name="password" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="card_type">Card type</label></td>
+            <td><input type="radio" name="card_type" value="gold" ngModel required>Gold
+                <input type="radio" name="card_type" value="titanium" ngModel required>Titanium</td>
+        </tr>
+        <tr>
+            <td><label for="account_no">Account Number</label></td>
+            <td><input type="number" name="account_no" ngModel required></td>
+        </tr>
+        <tr>
+            <td><label for="ifsc">IFSC code</label></td>
+            <td><input type="text" name="ifsc" ngModel required>
+                <div *ngIf="i==1" style="color: red;">invalid IFSC code</div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="street">Address</label></td>
+            <td><input type="text" name="street" ngModel required></td>
+        </tr><tr>
+            <td><label for="pincode">Pincode</label></td>
+            <td><input type="number" name="pincode" ngModel required>
+                <div *ngIf="p==1" style="color: red;">invalid Pincode</div>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td><label for="prod_img">Product Image</label></td>
+            <td><input type="file" (change)=onChange($event)  required></td>
+        </tr> -->
+        <tr>
+            <td colspan="2" align="center">
+                <br>
+                <b>
+                    Joining fee for gold card:200 <br>
+                Joining fee for gold card:500
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td><br>
+                <button type="reset" class="btn btn-danger">Reset</button></td>
+            <td><br>
+                <button type="submit" [disabled]="!userForm.valid" class="btn btn-success">Register and Pay</button></td>
+        </tr>
+    </table>
+</form>

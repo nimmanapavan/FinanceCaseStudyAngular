@@ -1,0 +1,29 @@
+<p>showallusers works!</p>
+
+<a (click)="userstoapprove()" class="btn"> Show users to approve</a>
+<a (click)="addproducts()" class="btn"> Add Products</a>
+<a (click)="showallproducts()" class="btn"> Show all products</a>
+<table align="center" class="table">
+    <thead>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Email ID</th>
+        <th>Phone number</th>
+        <th>Approval Status</th>
+        <th>Card Type</th>
+        <th>Card Number</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of usersarray">
+            <td>{{u.user_id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.dob}}</td>
+            <td>{{u.email_id}}</td>
+            <td>{{u.phone_no}}</td>
+            <td>{{u.approval_status}}</td>
+            <td>{{u.card_type}}</td>
+            <td>{{u.card_no}}</td>
+        </tr>
+    </tbody>
+</table>

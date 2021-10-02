@@ -1,0 +1,24 @@
+<p>products works!</p>
+<div class="container">
+    <button (click)="gotohome()" routerLink="dashboard">Home</button>
+</div>
+<table align="right"><tr><td>Hi</td><td>Username</td><td><button class="btn-danger" routerLink="">Logout</button></td></tr></table>
+<table align="center" class="table">
+    <thead>
+        <th>Product image</th>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>Buy now</th>
+    </thead>
+    <tbody>
+
+        <tr  *ngFor="let p of Products;let i=index">
+            <td><img src="/assets/{{p.prod_id}}.jpg" alt="" height="100px" width="150px"></td>
+            
+            <td>{{p.prod_name}}</td>
+            
+            <td>{{p.price}}</td>
+            <button [routerLink]='["/productinfo",p.prod_id]' class="btn btn-info" >Buy Now</button>
+        </tr>
+    </tbody>
+</table>
