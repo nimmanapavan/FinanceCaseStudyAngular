@@ -21,6 +21,7 @@ import { ProcessingfeeComponent } from './processingfee/processingfee.component'
 import { ProductinfoComponent } from './productinfo/productinfo.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { JoiningfeesComponent } from './joiningfees/joiningfees.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
     ProcessingfeeComponent,
     ProductinfoComponent,
     UserloginComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    JoiningfeesComponent
   ],
   imports: [
     BrowserModule,
