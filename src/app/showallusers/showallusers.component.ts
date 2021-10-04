@@ -27,6 +27,10 @@ export class ShowallusersComponent implements OnInit {
     );
 
   }
+  showallusers()
+  {
+    this.rtr.navigate(["showallusers"]);
+  }
   userstoapprove()
   {
     this.rtr.navigate(["userstoapprove"]);

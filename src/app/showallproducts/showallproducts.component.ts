@@ -33,7 +33,10 @@ export class ShowallproductsComponent implements OnInit {
       (data)=>{
         console.log(data);
         if(data)
+        {
           alert("Product deleted");
+          this.rtr.navigate(["showallproducts"]);
+        }  
       },
       (error)=>
       {
@@ -52,6 +55,10 @@ export class ShowallproductsComponent implements OnInit {
   addproducts()
   {
     this.rtr.navigate(["addproducts"]);
+  }
+  showallproducts()
+  {
+    this.rtr.navigate(["showallproducts"]);
   }
   gotodashboard()
   {

@@ -1,111 +1,112 @@
-<p>dashboard works! </p> 
-<div class="container">
-  <button (click)="productslist()"> hlo</button>
-  <button routerLink="">Logout</button>
-</div>
-
-<h6  >DASHBOARD</h6>
-
-<div >
-    
-    <div >
-      <div *ngIf="approval else elseBloc">
-        Card Number: {{obj1.card_no}}
-        
-    </div>
-        <ng-template #elseBloc>
-         <div>CARD NUMBER NOT GENERATED</div> 
-           
-      </ng-template>
+<div class="container bg_dash">
+  <button class="btn btn-primary" (click)="productslist()"> Products List</button>
+  <button class="btn btn-primary" routerLink="" style="position: relative; left: 900px;">Logout</button>
+  
+  <h5 class="display-5 text-center " >DASHBOARD</h5>
+  
+  <div class="card col-5 offset-3 mt-3">
       
-      Name: {{obj1.name}}<br>
-      Valid till: {{validitydate}}  <br>
-      CARD TYPE: {{obj1.card_type}}    
+      <div class="card-body">
+        <div *ngIf="approval else elseBloc">
+          Card Number: {{obj1.card_no}}
+          
+      </div>
+          <ng-template #elseBloc>
+           <div>CARD NUMBER NOT GENERATED</div> 
+             
+        </ng-template>
+        
+        Name: {{obj1.name}}<br>
+        Valid till: {{validitydate}}  <br>
+        CARD TYPE: {{obj1.card_type}}    
+      </div>
+      
+      <div *ngIf="approval else elseBlock"><div class="card-footer  bg-success text-center" >
+      ACTIVATED  
+      </div>
+  </div>
+      <ng-template #elseBlock><div class="card-footer  bg-danger text-center" >
+       NOT ACTIVATED 
+         
+      </div></ng-template>
+      </div>
+  
+  <br> <br> <br>
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            TOTAL CREDIT
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <strong>Rs. {{tcredit}}</strong>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            CREDIT USED
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            <strong>Rs. {{totalused}}</strong>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            REMAINING CREDIT
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+          <strong>Rs. {{remainingcredit}}</strong>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div *ngIf="approval else elseBlock"><div  >
-    ACTIVATED  
+  <br> <br> 
+  
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        TRANSACTION HISTORY
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <div class="card card-body" style="width: 1000px;">
+          <table class="table table-striped">
+              <thead>
+                  <td>Product ID</td>
+                  <td>Product Name</td>
+                  <td>Total Amount</td>
+                  <td>Date Of Purchase </td>
+                  <td>EMI Period</td>
+                  <td>STATUS</td>
+  
+                  
+                  
+              </thead>
+              <tbody>
+                  <tr *ngFor="let t of obj,let i = index ">
+                      <td>{{t.prod_id}}</td>
+                      <td>{{product[i].prod_name}}</td>
+                      <td>{{product[i].price}}</td>
+                      <td>{{t.date_of_purchase}}</td>
+                      <td>{{t.emi_period}}</td>
+                      <td>{{t.status}}</td>
+                  </tr>
+                  
+              </tbody>
+            </table> 
+      </div>
+      </div>
     </div>
+  
+  
 </div>
-    <ng-template #elseBlock><div  >
-     NOT ACTIVATED 
-       
-    </div></ng-template>
-    </div>
-
-<br> <br> <br>
-<div >
-    <div >
-      <h2 >
-        <button >
-          TOTAL CREDIT
-        </button>
-      </h2>
-      <div >
-        <div >
-          <strong>Rs. {{tcredit}}</strong>
-        </div>
-      </div>
-    </div>
-    <div >
-      <h2 >
-        <button >
-          CREDIT USED
-        </button>
-      </h2>
-      <div >
-        <div >
-          <strong>Rs. {{totalused}}</strong>
-        </div>
-      </div>
-    </div>
-    <div >
-      <h2 >
-        <button >
-          REMAINING CREDIT
-        </button>
-      </h2>
-      <div >
-        <div >
-        <strong>Rs. {{remainingcredit}}</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-<br> <br> 
-
-  <p>
-    <button class="btn btn-primary" type="button" >
-      TRANSACTION HISTORY
-    </button>
-  </p>
-  <div style="min-height: 120px;">
-    <div >
-      <div >
-        <table class="table table-striped">
-            <thead>
-                <td>Product ID</td>
-                <td>Product Name</td>
-                <td>Total Amount</td>
-                <td>Date Of Purchase </td>
-                <td>EMI Period</td>
-                <td>STATUS</td>
-
-                
-                
-            </thead>
-            <tbody>
-                <tr *ngFor="let t of obj,let i = index ">
-                    <td>{{t.prod_id}}</td>
-                    <td>{{product[i].prod_name}}</td>
-                    <td>{{product[i].price}}</td>
-                    <td>{{t.date_of_purchase}}</td>
-                    <td>{{t.emi_period}}</td>
-                    <td>{{t.status}}</td>
-                </tr>
-                
-            </tbody>
-          </table> 
-    </div>
-    </div>
-  </div>

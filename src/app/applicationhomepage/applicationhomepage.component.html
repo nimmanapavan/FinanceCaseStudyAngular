@@ -1,14 +1,16 @@
-<table align="right"><tr> <td><button  class=" btn btn-danger" routerLink="userregistration">Register</button> </td><td><button routerLink="adminlogin" class=" btn btn-danger">Admin Login</button> </td><td><button class="btn btn-danger" routerLink="loginpage">User Login</button></td></tr></table>
-<table align="center" class="table table-bordered">
-    <tr>
-        <td rowspan="4"><img src="/assets/{{Products.prod_id}}.png" alt="" height="400px" width="400px" ></td>
-        <td>{{Products.prod_name}}</td></tr>
-     <tr> <td>{{Products.description}}</td></tr>
-      <tr>  <td>{{Products.price}}</td></tr>
-      <tr><td ><a (click)="gotologin()"  class="btn-warning">Buy now</a></td></tr>
-      <tr ><td ><b>Eligibility:</b><p>In order to be eligible for using our service,the inteded customer need to show a sufficient proof of income,income tax submission and valuated assets.</p></td>
-<tr><td></td><td><a href="" download="">Terms and Conditions</a></td></tr>
-<tr><td><b>Registration fee and EMI card details:</b></td><td>Basic Registration fee for Gold card:200/- and for Titanium card:500/-</td></tr>
-<tr><td></td><td><b>Gold EMI Card Limit:</b>1,00,000/-</td></tr>
-<tr><td></td><td><b>Titanium EMI Card Limit:</b>1,50,000/-</td></tr>
-</table>
+<div class="tab"><table align="center" class="navcolor"><tr><td><b>WELCOME TO FMS!!</b></td><td><img src="/assets/fmslogo.jpg" alt="" height="25px" width="25px"></td> <td><button  class=" btn btn-danger" routerLink="userregistration">Register</button> </td><td><button routerLink="adminlogin" class=" btn btn-danger">Admin Login</button> </td><td><button class="btn btn-danger" routerLink="loginpage">User Login</button></td><td class="navcolor"></td></tr></table>
+    <table align="center" class="tab">
+        <tr>
+            <td rowspan="4"><img src="/assets/{{Products.prod_id}}.jpg" alt="" height="400px" width="400px" ></td>
+            <td><b>{{Products.prod_name}}</b></td></tr>
+         <tr> <td><b>{{Products.description}}</b></td></tr>
+          <tr>  <td><b>{{Products.price}}</b></td></tr>
+          <tr><td ><a (click)="gotologin()" ><button class="btn-warning">Buy now</button></a></td></tr>
+          <tr ><td class="el" ><b>Eligibility:</b><p><b>In order to be eligible for using our service,the inteded customer need to show a sufficient proof of income,income tax submission and valuated assets.</b></p></td><td class="el"></td>
+    <tr><td></td><td><a href="" download="">Terms and Conditions</a></td></tr>
+    <tr><td><b>Registration fee and EMI card details:</b></td><td><b>Basic Registration fee for Gold card:200/- and for Titanium card:500/-</b></td></tr>
+    <tr><td></td><td><b>Gold EMI Card Limit:1,00,000/-</b></td></tr>
+    <tr><td></td><td><b>Titanium EMI Card Limit:1,50,000/-</b></td></tr>
+    <tr class="tab"><td></td></tr>
+    </table>
+    </div>

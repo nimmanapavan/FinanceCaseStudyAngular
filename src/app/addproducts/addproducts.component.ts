@@ -62,6 +62,10 @@ export class AddproductsComponent implements OnInit {
   {
     this.rtr.navigate(["userstoapprove"]);
   }
+  addproducts()
+  {
+    this.rtr.navigate(["addproducts"]);
+  }
   showallproducts()
   {
     this.rtr.navigate(["showallproducts"]);
@@ -70,5 +74,6 @@ export class AddproductsComponent implements OnInit {
   {
     this.rtr.navigate(['']);
   }
+
 
 }

@@ -1,9 +1,11 @@
-<div class="container" align="right">
-    <button (click)="gotodashboard()">logout</button>
-</div>
-<a (click)="showallusers()" class="btn"> Show all users</a>
+<div class="container" style="background-color: dodgerblue;">
+    <h2>Admin home page</h2>
+    <a (click)="showallusers()" class="btn"> Show all users</a>
     <a (click)="userstoapprove()" class="btn"> Show users to approve</a>
     <a (click)="addproducts()" class="btn"> Add Products</a>
+    <a (click)="showallproducts()" class="btn"> Show all products</a>
+    <button (click)="gotodashboard()" class="btn" style="text-align: right;">logout</button>
+  </div>
 <table align="center" class="table">
     <thead>
         <th>Product image</th>
@@ -13,7 +15,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let p of products;let i=index">
-            <td><img src="/assets/{{p.prod_id}}.png" alt="" height="100px" width="150px"></td>
+            <td><img src="/assets/{{p.prod_id}}.jpg" alt="" height="100px" width="150px"></td>
             <td>{{p.prod_name}}</td>
             <td>{{p.price}}</td>
             <td>{{p.description}}</td>

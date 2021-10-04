@@ -1,11 +1,13 @@
-<div class="container" align="right">
-    <button (click)="gotodashboard()">logout</button>
-</div>
-<a (click)="showallusers()" class="btn"> Show all users</a>
+<div class="container" style="background-color: dodgerblue;">
+    <h2>Admin home page</h2>
+    <a (click)="showallusers()" class="btn"> Show all users</a>
     <a (click)="userstoapprove()" class="btn"> Show users to approve</a>
+    <a (click)="addproducts()" class="btn"> Add Products</a>
     <a (click)="showallproducts()" class="btn"> Show all products</a>
+    <button (click)="gotodashboard()" class="btn" style="text-align: right;">logout</button>
+  </div>
 <form #productForm="ngForm" (ngSubmit)=addProduct(productForm) novalidate>
-    <table align="center">
+    <table class="table table-bordered" style="max-width: 700px; margin: auto;">
         <tr>
             <td><label for="prod_id">Product Id</label></td>
             <td><input type="text" name="prod_id" ngModel required></td>
@@ -27,8 +29,8 @@
             <td><input type="file" (change)=onChange($event)  required></td>
         </tr>
         <tr>
-            <td><button type="reset" class="btn btn-danger">Reset</button></td>
-            <td><button type="submit" [disabled]="!productForm.valid" class="btn btn-success">Save Product</button></td>
+            <td><button type="reset" class="btn ">Reset</button></td>
+            <td><button style="background-color: forestgreen;" type="submit" [disabled]="!productForm.valid" class="btn">Save Product</button></td>
         </tr>
     </table>
 </form>

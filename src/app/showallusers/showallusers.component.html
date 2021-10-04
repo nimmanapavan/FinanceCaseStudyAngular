@@ -1,10 +1,12 @@
 
-<div class="container" align="right">
-    <button (click)="gotodashboard()">logout</button>
-</div>
-<a (click)="userstoapprove()" class="btn"> Show users to approve</a>
-<a (click)="addproducts()" class="btn"> Add Products</a>
-<a (click)="showallproducts()" class="btn"> Show all products</a>
+<div class="container" style="background-color: dodgerblue;">
+    <h2>Admin home page</h2>
+    <a (click)="showallusers()" class="btn"> Show all users</a>
+    <a (click)="userstoapprove()" class="btn"> Show users to approve</a>
+    <a (click)="addproducts()" class="btn"> Add Products</a>
+    <a (click)="showallproducts()" class="btn"> Show all products</a>
+    <button (click)="gotodashboard()" class="btn" style="text-align: right;">logout</button>
+  </div>
 <table align="center" class="table">
     <thead>
         <th>User ID</th>

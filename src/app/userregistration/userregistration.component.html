@@ -1,8 +1,9 @@
-<div class="container">
-    <button (click)="goback()">go back</button>
+<div class="container" style="background-color: cornflowerblue;">
+    <h1>FMS Application</h1>
+    <button class="btn" (click)="goback()">go back</button>
   </div>
-<form #userForm="ngForm" (ngSubmit)=addUser(userForm) novalidate>
-    <table align="center">
+<form  #userForm="ngForm" (ngSubmit)=addUser(userForm) novalidate>
+    <table class="table table-bordered" style="margin: auto; max-width: 700px;">
         <tr>
             <td><label for="user_id">User Id</label></td>
             <td><input type="text" name="user_id" ngModel required>
@@ -62,13 +63,13 @@
                 <br>
                 <b>
                     Joining fee for gold card:200 <br>
-                Joining fee for gold card:500
+                Joining fee for titanium card:500
                 </b>
             </td>
         </tr>
         <tr>
             <td><br>
-                <button type="reset" class="btn btn-danger">Reset</button></td>
+                <button type="reset" class="btn ">Reset</button></td>
             <td><br>
                 <button type="submit" [disabled]="!userForm.valid" class="btn btn-success">Register and Pay</button></td>
         </tr>

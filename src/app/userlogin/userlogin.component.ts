@@ -24,6 +24,7 @@ export class UserloginComponent implements OnInit {
   validateuser(ulform:any){
     this.uname = (<HTMLInputElement>document.getElementById("uname")).value;
     this.pswd = (<HTMLInputElement>document.getElementById("pswd")).value;
+
     this.userobj = this.uservice.searchByUserId(this.uname);
     console.log("checking null "+this.userobj != null);
     if(this.userobj != null){

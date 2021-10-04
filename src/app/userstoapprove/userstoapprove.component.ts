@@ -60,6 +60,10 @@ export class UserstoapproveComponent implements OnInit {
   {
     this.rtr.navigate(["showallusers"]);
   }
+  userstoapprove()
+  {
+    this.rtr.navigate(["userstoapprove"]);
+  }
   addproducts()
   {
     this.rtr.navigate(["addproducts"]);

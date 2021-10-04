@@ -50,7 +50,7 @@ export class ProductinfoComponent implements OnInit {
           this.payButtonStatus = true;
           console.log("after approval "+this.payButtonStatus);
         }
-        this.uid = "sad";
+        this.uid = this.uservice.user_id;
         console.log(this.uid);
         this.oservice.helpergetLastTransaction(this.uservice.getuserId() , this.prodid); //this.uservice.getuserId()
  
