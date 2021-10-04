@@ -68,5 +68,8 @@ export class UserstoapproveComponent implements OnInit {
   {
     this.rtr.navigate(["showallproducts"]);
   }
-
+  gotodashboard()
+  {
+    this.rtr.navigate(['']);
+  }
 }

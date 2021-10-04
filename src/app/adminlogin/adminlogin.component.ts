@@ -22,13 +22,18 @@ export class AdminloginComponent implements OnInit {
     // this.profileForm.controls.firstName.setValue('shushil');
     if(this.NAME1 == "admin" && this.NAME2 == "admin"){
       alert("success");
+      this.rtr.navigate(["adminhome"]);
           }
           else{
       alert("Invalid Login");
+      this.rtr.navigate(["adminlogin"]);
           }
-      this.rtr.navigate(["adminhome"]);
+      
   } 
-
+  goback()
+  {
+    this.rtr.navigate(['']);
+  }
   NAME1:string ='';
   NAME2:string ='';
 

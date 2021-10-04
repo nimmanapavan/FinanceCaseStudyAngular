@@ -35,6 +35,7 @@ export class UserregistrationComponent implements OnInit {
     this.user.approval_status="no";
     this.user.date_of_registration=this.date;
     console.log(this.user);
+    this.userv.cardtype=this.user.card_type;
 
     this.userv.getalluserid().subscribe(
       (data)=>{
@@ -43,39 +44,54 @@ export class UserregistrationComponent implements OnInit {
         if(this.userids.includes(this.user.user_id)||this.user.user_id=="")
         {
           this.u=1;
-          return;
         }
-      }
-    );
-
-    this.userv.getallpincodes().subscribe(
-      (data)=>{
-        this.pincodes=data as String;
-        console.log(this.pincodes);
-        if(!this.pincodes.includes(this.user.pincode))
-        {
-          this.p=1;
-          return;
+        else{
+          this.u=0;
         }
-      }
-    );
-
-    this.userv.getallifsc().subscribe(
-      (data)=>{
-        this.ifscs=data as String;
-        console.log(this.ifscs);
-        if(!this.ifscs.includes(this.user.ifsc))
-        {
-          this.i=1;
-          return;
-        }
-      }
-    );
+        this.userv.getallpincodes().subscribe(
+          (data)=>{
+            this.pincodes=data as String;
+            console.log(this.pincodes);
+            if(!this.pincodes.includes(this.user.pincode))
+            {
+              this.p=1;
+            }
+            else{
+              this.p=0;
+            }
+            this.userv.getallifsc().subscribe(
+              (data)=>{
+                this.ifscs=data as String;
+                console.log(this.ifscs);
+                if(!this.ifscs.includes(this.user.ifsc))
+                {
+                  this.i=1;
+                }
+                else{
+                  this.i=0;
+                }
+                if(this.i!=1&&this.p!=1&&this.u!=1)
+                {
+                  this.userv.newuser=this.user;
     
-    this.userv.addUser(this.user).subscribe();
-    this.rtr.navigate(['loginpage']);
+                  this.rtr.navigate(['joiningfees']);
+
+                }
+              }
+            );
+          }
+        );
+      }
+    );
 
 
+    
+
+
+  }
+  goback()
+  {
+    this.rtr.navigate(['']);
   }
 
 }

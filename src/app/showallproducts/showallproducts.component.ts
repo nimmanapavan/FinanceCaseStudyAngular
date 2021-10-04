@@ -53,5 +53,9 @@ export class ShowallproductsComponent implements OnInit {
   {
     this.rtr.navigate(["addproducts"]);
   }
+  gotodashboard()
+  {
+    this.rtr.navigate(['']);
+  }
 
 }

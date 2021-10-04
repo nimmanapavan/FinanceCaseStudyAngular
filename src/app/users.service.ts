@@ -10,7 +10,8 @@ export class UsersService {
   baseurl="http://localhost:8088/fms";
   
   constructor(private http:HttpClient) { }
-
+  cardtype:any;
+  newuser=new Users();
   user_id:string=''
   userobj = new Users();
   

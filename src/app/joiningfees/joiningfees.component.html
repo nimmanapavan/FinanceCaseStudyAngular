@@ -1,1 +1,71 @@
-<p>joiningfees works!</p>
+<table>
+    <tr><td>Select a payment Mode</td></tr>
+    <td>
+        <div class="radio" *ngFor="let p of payment_options">
+            <label>
+              <input type="radio" name="payoption"  value="{{p}}" [(ngModel)]= payment_type>
+             {{p}}
+            </label>
+          </div>
+    </td>
+    <tr>
+        <td>
+            <ng-container *ngIf="(payment_type != '')">
+                <ng-container *ngIf="(payment_type=='NetBanking'); else Card">
+                    Select Bank
+                    <select  [(ngModel)]='bankname'>
+                        <option value ='select'>Select</option>
+                        <option *ngFor="let bank of banks" value="{{bank}}">{{bank}}</option>
+                    </select>
+                </ng-container>
+                <ng-template #Card>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Card No</td><td><input type="text"><br><br></td>
+                        </tr>
+                        <tr>
+                            <td>Exp. Date </td><td><input type="text" placeholder="MM/YY"></td>
+                            <td>CVV</td><td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Joiningfees</td>
+                            <td>{{joiningfees}}</td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn btn-warning" (click)="registeruser()">Confirm Payment</button></td>
+                        </tr>
+                    </table>
+                    
+                    
+                </ng-template>
+                </ng-container>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ng-container *ngIf="(bankname != 'select' && payment_type == 'NetBanking')">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Account No</td>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr><td>Re-enter Account No</td>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td>IFSC Code</td>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td>Total Amount</td>
+                        <td>{{prodobj.price}}</td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-warning" [routerLink]='["/orderdetails",prodobj.prod_id]'>Confirm Payment</button></td>
+                    </tr>
+                </table>
+
+            </ng-container>
+        </td>
+    </tr>
+</table>

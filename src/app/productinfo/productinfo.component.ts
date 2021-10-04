@@ -77,4 +77,8 @@ export class ProductinfoComponent implements OnInit {
     console.log("pservice pay status "+this.payButtonStatus);
   }
 */
+goback()
+  {
+    this.route.navigate(['productslist']);
+  }
 }

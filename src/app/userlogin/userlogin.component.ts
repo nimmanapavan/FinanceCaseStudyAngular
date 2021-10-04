@@ -39,5 +39,9 @@ export class UserloginComponent implements OnInit {
       alert("User does not exist");
     }
   }
+  goback()
+  {
+    this.route.navigate(['']);
+  }
 
 }

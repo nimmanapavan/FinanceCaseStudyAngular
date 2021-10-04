@@ -39,5 +39,8 @@ export class ShowallusersComponent implements OnInit {
   {
     this.rtr.navigate(["showallproducts"]);
   }
-
+  gotodashboard()
+  {
+    this.rtr.navigate(['']);
+  }
 }

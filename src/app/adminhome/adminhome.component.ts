@@ -28,5 +28,9 @@ export class AdminhomeComponent implements OnInit {
   {
     this.rtr.navigate(["showallproducts"]);
   }
+  gotodashboard()
+  {
+    this.rtr.navigate(['']);
+  }
 
 }
